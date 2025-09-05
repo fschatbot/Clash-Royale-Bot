@@ -31,7 +31,7 @@ def screenshot():
 
     bring_focus()
     screenshot = ImageGrab.grab(bbox=bbox)
-    screenshot = screenshot.convert('L')
+    # screenshot = screenshot.convert('L')
     # Save this in the database folder
     screenshot.save(f'database/test{current_i}.png')
     current_i += 1
@@ -64,7 +64,9 @@ def main():
     ...
 
 if __name__ == "__main__":
-    ss = screenshot()
-    ss.save("screenshot.png")
+    while True:
+        time.sleep(1)
+        ss = screenshot()
+        # ss.save("screenshot.png")
     # ss.show()
-    print(page(ss))
+    # print(page(ss))
